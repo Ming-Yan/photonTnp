@@ -1,0 +1,8 @@
+#!/bin/bash                                                                                                                                  
+
+#cmsRun fitterWithManyTemplates_DataMVA_35pTCut.py outputFileName=35pTCut
+
+python dumpPlotFromEffFile.py -i efficiency-data-passingLoose-35pTCut.root -d PhotonToRECO -b True
+python dumpPlotFromEffFile.py -i efficiency-data-passingMedium-35pTCut.root -d PhotonToRECO -b True
+python dumpPlotFromEffFile.py -i efficiency-data-passingTight-35pTCut.root -d PhotonToRECO -b True
+python dumpPlotFromEffFile.py -i efficiency-data-passingMVA-35pTCut.root -d PhotonToRECO -b True
