@@ -2,9 +2,7 @@
 #include "CMS_lumi.C"
 
 void xHistosCombine(TString fname="Loose", TString region="EB", TString hname="Muu", TString xname = "x", Int_t legStyle=0, Int_t logy=0, Int_t logx=0) {
-	//TString hname = "Muug"; TString yname = "Events"; TString xname = "M_{#mu#mu#gamma}"; Int_t legStyle = 0; Int_t logy = 0; Int_t logx = 0;
 	TString yname = "Events";
-	//if (hname == "MuugMuu") yname = "M_{#mu#mu}";
 	setTDRStyle();
 
 	TFile *f = new TFile("../plots" + fname + region + ".root");
@@ -13,7 +11,7 @@ void xHistosCombine(TString fname="Loose", TString region="EB", TString hname="M
 
 	TH1F  *hs, *hd, *hwg, *htt;
 	TString shname = "s" + hname;
-	//TH1F  *hMC = new TH1F();
+
 	hs = (TH1F*)f->Get(shname);
 	hwg = (TH1F*)f2->Get(shname);
 	htt = (TH1F*)f3->Get(shname);
@@ -45,7 +43,6 @@ void xHistosCombine(TString fname="Loose", TString region="EB", TString hname="M
 	//hd->Scale(1. / hd->Integral(-1, -1));
 	TH1F *hRatio = (TH1F*)hd->Clone();
 	hRatio->SetDirectory(0);
-	//hRatio->Scale(1. / hRatio->Integral(-1, -1));
 	hRatio->Divide(hs);
 	//hRatio->Sumw2();
 
