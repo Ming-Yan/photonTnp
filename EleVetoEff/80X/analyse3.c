@@ -134,7 +134,7 @@ void analyse3(TString &IDtype, TString &CutType, TString &R9Type, TString &regio
 		if (region == "EB" && fabs(SCEta[i]) > 1.4442) continue;
 		if (region == "EE" && fabs(SCEta[i]) < 1.566) continue;
 
-		if (presel[i]){//useless after ID cut
+		if (presel[i]){
 			hMuug->Fill(Muug);
 			hMuu->Fill(Muu);
 			Ptg->Fill(Pt);
@@ -151,8 +151,6 @@ void analyse3(TString &IDtype, TString &CutType, TString &R9Type, TString &regio
 
 		if (CutType == "CSEV" && !bCut[i]) continue;
 		if (CutType == "HasPix" && bCut[i]) continue;
-		//if (CutType == "MVA" && region == "EB" && MVA[i] < 0.374) continue;
-		//if (CutType == "MVA" && region == "EE" && MVA[i] < 0.336) continue;
 
 		hd->Fill(fabs(SCEta[i]), weight);
 		hd2->Fill(fabs(SCEta[i]), Pt[i], weight);
@@ -209,8 +207,6 @@ void analyse3(TString &IDtype, TString &CutType, TString &R9Type, TString &regio
 
 		if (CutType == "CSEV" && !bCuts[si]) continue;
 		if (CutType == "HasPix" && bCuts[si]) continue;
-		//if (CutType == "MVA" && region == "EB" && MVA[si] < 0.374) continue;
-		//if (CutType == "MVA" && region == "EE" && MVA[si] < 0.336) continue;
 
 		hs->Fill(fabs(SCEta[si]), weight);
 		hs2->Fill(fabs(SCEta[si]), Pt[si], weight);
