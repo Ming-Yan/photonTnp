@@ -3,8 +3,7 @@
 #include <vector>
 #include "puweicalc.h"
 #include "Utilities.h"
-#include "phoIDbits.C" //remove later
-#include <TMVA/Reader.h> //remove later
+#include <TMVA/Reader.h>
 #include <TH2F.h>
 #include <TH1F.h>
 
@@ -18,11 +17,6 @@ bool mcMatchPho(int i, TreeReader &data);
 
 void xAna(const char** input, int npaths, const char* output = "preminitree.root",
 	const char* type = "signal", Long64_t ev1 = 0, Long64_t ev2 = -1){
-	//TEMPORARY PARAMETERS:
-	/*TString input = "/data6/ggNtuples/V07_04_14_01/job_spring15_DYJetsToLL_m50_miniAOD.root";
-	Long64_t ev1 = 0, ev2 = -1;
-	int npaths = 1;
-	TString output = "test.root";*/
 
 	int count = 0;
 	Double_t wCounter = 0;
@@ -41,24 +35,17 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 	map<string, TH1F*> hist;
 	map<string, TH2F*> hist2;
 
-	//INITIALIZE HISTOGRAMS; MOVE THIS TO DIFFERENT CODE
-	//fix binning
-	hist["Muu"] = new TH1F("Muu", "M_{#mu#mu}", 35, 20, 90);//100
-	hist["Muug"] = new TH1F("Muug", "M_{#mu#mu#gamma}", 40, 70, 110);//100
-	hist["Ptg"] = new TH1F("Ptg", "P_{T}^{#gamma}", 20, 0, 100);//100
-	hist["Etag"] = new TH1F("Etag", "#eta^{#gamma}", 20, -2.5, 2.5);//100, -3 to 3
-	hist["phoMVAEE"] = new TH1F("phoMVAEE", "Photon ID MVA EE", 10, -1, 1);//100
-	hist["phoMVAEB"] = new TH1F("phoMVAEB", "Photon ID MVA EB", 10, -1, 1);//100
-	//hist["nVtx_norew"] = new TH1F("nVtx_norew", "Number of Vertices without reweighting", 50, 0, 50);
-	//hist["nVtx"] = new TH1F("nVtx", "Number of Vertices", 50, 0, 50); //use puwei_ as weight
+	hist["Muu"] = new TH1F("Muu", "M_{#mu#mu}", 35, 20, 90);
+	hist["Muug"] = new TH1F("Muug", "M_{#mu#mu#gamma}", 40, 70, 110);
+	hist["Ptg"] = new TH1F("Ptg", "P_{T}^{#gamma}", 20, 0, 100);
+	hist["Etag"] = new TH1F("Etag", "#eta^{#gamma}", 20, -2.5, 2.5);
+	hist["phoMVAEE"] = new TH1F("phoMVAEE", "Photon ID MVA EE", 10, -1, 1);
+	hist["phoMVAEB"] = new TH1F("phoMVAEB", "Photon ID MVA EB", 10, -1, 1);
 	hist2["MuugMuu"] = new TH2F("MuugMuu", "M_{#mu#mu#gamma} Vs. M_{#mu#mu}", 100, 70, 140, 100, 70, 100);
-	//hist2["EffPt"] = new TH2F("EffPt", "Efficiency Vs. P_{T}^{#gamma}", 100, 0, 100, 100, 0, 5);
-	//hist2["EffEta"] = new TH2F("EffEta", "Efficiency Vs. #eta^{#gamma}", 100, 0, 100, 100, 0, 5);
 
-	TreeReader data(input, npaths); //USE THIS
-	//TreeReader data(input); //TEMPORARY
+	TreeReader data(input, npaths);
 
-	TFile *fout_ = new TFile(output, "recreate"); //output file: test.root
+	TFile *fout_ = new TFile(output, "recreate"); //output file
 
 	TLorentzVector selLep[2], selPho;
 
@@ -73,7 +60,7 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 	float genWeight_, mcwei_, Pt_, Eta_, Mass_, R9_;
 	float Muu_;
 	int run_;
-	//ADDED
+
 	int nVtx_norew_;
 
 	//weights
@@ -105,7 +92,7 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 	outtree_->Branch("presel", &presel_, "presel/I");
 	outtree_->Branch("run", &run_, "run/I");
 	outtree_->Branch("mcwei", &mcwei_, "mcwei/F");
-	//ADDED
+
 	outtree_->Branch("nVtx_norew", &nVtx_norew_, "nVtx_norew/I");
 
 	double nFSR = 0;
@@ -137,8 +124,6 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 	for (Long64_t ev = ev1; ev < ev2; ev++) { //ev1 = 0, ev2 = -1 by deafult; ev1 -> lower limit; ev2 -> Nevents
 		if ((ev - ev1) % 100000 == 0){
 			fprintf(stderr, "processing event %lli of %lli\n", ev + 1, data.GetEntriesFast());
-			//cout.precision(17);
-			//cout << wCounter << endl;
 		}
 
 		data.GetEntry(ev);
@@ -169,7 +154,6 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 		if (data.HasMC()) weight = genWeight_;
 
 		weight = (weight > 0) ? 1. : -1.;
-		//cout << weight << " " << pu71_ << endl;
 		wCounter += weight;
 		weight = weight*pu71_;//puwei_ for 69mb; pu71_ for 71mb
 
@@ -263,10 +247,10 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 		vector<int> iSelmu; //index of selected mu
 		int nSelmu = 0; //number of selected mu
 
-		/// Select 2 good muons 
-		for (int imu = 0; imu<nMu; imu++){ //imu is index of muon;loops over all muons in the file
+		// Select 2 good muons 
+		for (int imu = 0; imu<nMu; imu++){ 
 
-			if (muPt[imu] < 10) continue; //muPt must be > 10
+			if (muPt[imu] < 10) continue; 
 
 			bool id = select_muons(data, imu);
 			if (!id) continue;
@@ -280,67 +264,23 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 		int ileadmu = iSelmu[0];
 		int itrailmu = iSelmu[1];
 
-		if (muPt[ileadmu] <  muPt[itrailmu]){ //remove for faster processing
-			cout << "WARNING!!!! Muons not pt ordered" << endl;
-		}
-
 		TLorentzVector mu1, mu2;
 
 		mu1.SetPtEtaPhiM(muPt[ileadmu], muEta[ileadmu], muPhi[ileadmu], 105.7*0.001);
 		mu2.SetPtEtaPhiM(muPt[itrailmu], muEta[itrailmu], muPhi[itrailmu], 105.7*0.001);
 
 		int iSelpho[100]; //select 100 photons
-		int nSelpho = 0; //number of photons
+		int nSelpho = 0;
 
 		for (Int_t i = 0; i < nPho; i++) {
 
 			float absEta = fabs(phoSCEta[i]);
 
-			if (phoPt[i] < 10) continue; //phopt cut at 10; move to 15
+			if (phoPt[i] < 10) continue;
 
 			if ((absEta > 1.4442) && (absEta < 1.566)) continue; //gap region
 
-			//bool phoID = phoid[i]>>0&1;
-			//if(!phoID) continue;
-
 			if (absEta > 2.5) continue;
-
-			///apply cut on corrected iso
-			/*int bin;
-			if (absEta < 1.0) bin = 0;
-			else if (absEta >= 1.0 && absEta < 1.479) bin = 1;
-			else if (absEta >= 1.479 && absEta < 2.0) bin = 2;
-			else if (absEta >= 2.0 && absEta < 2.2) bin = 3;
-			else if (absEta >= 2.2 && absEta < 2.3) bin = 4;
-			else if (absEta >= 2.3 && absEta < 2.4) bin = 5;
-			else bin = 6; // absEta >= 2.4
-
-			//PU BX25 ns
-			double chEA[] = { 0.0234, 0.0189, 0.0171, 0.0129, 0.0110, 0.0074, 0.0035 };
-
-			// rho-corrected PF neutral hadron isolation
-			//double neuEA[] = { 0.0053, 0.0103, 0.0057, 0.0070, 0.0152, 0.0232, 0.1709 };
-
-			// rho-corrected PF photon isolation
-			//double phoEA[] = { 0.078, 0.0629, 0.0264, 0.0462, 0.0740, 0.0924, 0.1484 };
-			
-			corrchIso = max(phoPFChIso[i] - chEA[bin] * rho2012, 0.); //used below; joke lang*/
-
-			//double corrpfIso = max(phoPFPhoIso[i] - phoEA[bin] * rho2012, 0.);
-
-			//double corrneIso = max(phoPFNeuIso[i] - neuEA[bin] * rho2012, 0.);
-
-
-			//THESE WILL BIAS RESULTS
-			/*if (phoHoverE[i] > 0.05) continue;
-
-			double cut_sie = 0.011;
-			if (absEta<1.4442) cut_sie = 0.011;//barrel
-			else cut_sie = 0.031;//endcaps
-			if (sie_2012[i] > cut_sie) continue; //cut on phoSigmaIEtaIEtaFull5x5
-
-			if (corrchIso > 3.) continue;*/
-
 
 			TLorentzVector pho;
 			pho.SetPtEtaPhiM(phoPt[i], phoEta[i], phoPhi[i], 0.00);
@@ -384,7 +324,7 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 			double Muu = (mu1 + mu2).M();
 			double Muug = (mu1 + mu2 + pho).M();
 
-			double diff = fabs(91.2 - Muug); //mass must be close to Z mass
+			double diff = fabs(91.2 - Muug);
 
 			if (mindiff > diff){ //take photon which gives closest Z mass value
 
@@ -434,12 +374,6 @@ void xAna(const char** input, int npaths, const char* output = "preminitree.root
 		SCEta_ = phoSCEta[finipho];
 		bMVA_ = ((fabs(phoSCEta[finipho]) <= 1.4442 && phoMVA > 0.374) || (fabs(phoSCEta[finipho]) >= 1.566 && phoMVA > 0.336));//EB || EE
 
-		/*if (EleVeto_ == 1 &&
-			((fabs(SCEta_) <= 1.4442 && phoHoverE[finipho] < 0.08) || (fabs(SCEta_) >= 1.566 && phoHoverE[finipho] < 0.05)) &&
-			phoPFPhoIso[finipho] < 15 &&
-			((sie_2012[finipho] < 0.012 && fabs(SCEta_) <= 1.4442) || (sie_2012[finipho] < 0.027 && fabs(SCEta_) >= 1.566)) && 
-			phoPFChWorstIso[finipho] < 15 &&
-			((R9_ > 0.85 && fabs(SCEta_) >= 1.566) || fabs(SCEta_) <= 1.4442)){*/
 		float absEta = fabs(phoSCEta[finipho]);
 
 		double cut_sie = 0.011;
