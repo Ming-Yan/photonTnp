@@ -35,13 +35,6 @@ void run(){
 						"," << hsval << " +/- " << hserr <<
 						"," << sfval << " +/- " << sferr << std::endl;
 
-					/*outputFile << IDtype[i] << CutType[j] << region[k] << "," << R9Type[l] << "," << hdval << " +/- " << hderr <<
-						"," << hsval << " +/- " << hserr <<
-						"," << sfval << " +/- " << sferr << std::endl;*/
-
-					/*outputFile << "data" << IDtype[i] << CutType[j] << R9Type[k] << region[l] << hdval << hderr << std::endl;
-					outputFile << "MC" << IDtype[i] << CutType[j] << R9Type[k] << region[l] << hsval << hserr << std::endl;
-					outputFile << "SF" << IDtype[i] << CutType[j] << R9Type[k] << region[l] << sfval << sferr << std::endl;*/
 				}
 			}
 		}
