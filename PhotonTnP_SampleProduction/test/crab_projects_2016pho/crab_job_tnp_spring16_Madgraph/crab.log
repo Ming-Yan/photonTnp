@@ -1,0 +1,139 @@
+ ################################################################### 
+ # WARNING: this module is deprecated.                             # 
+ # Please use CondCore.CondDB.CondDB_cfi.py                        # 
+ ################################################################### 
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+  -- Producing photon SF tree      -- 
+DEBUG 2016-10-04 11:43:25,053: 	 Executing command: 'submit'
+DEBUG 2016-10-04 11:43:25,071: 	 Found CRAB cache file /afs/cern.ch/user/p/pwang/.crab3
+DEBUG 2016-10-04 11:43:25,082: 	 Checking credentials
+DEBUG 2016-10-04 11:43:25,083: 	 Found proxy file /tmp/x509up_u71681
+DEBUG 2016-10-04 11:43:25,083: 	 Getting proxy life time left
+DEBUG 2016-10-04 11:43:25,690: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u71681 -timeleft
+ output : 604705
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:26,198: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u71681 -actimeleft
+ output : 604704
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:26,199: 	 Proxy valid for 167:58:25 hours
+DEBUG 2016-10-04 11:43:26,200: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2016-10-04 11:43:26,318: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pwang/CN=760504/CN=Pen-Hsuan Wang
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:26,318: 	 Checking credentials
+DEBUG 2016-10-04 11:43:26,318: 	 Found proxy file /tmp/x509up_u71681
+DEBUG 2016-10-04 11:43:26,318: 	 Getting proxy life time left
+DEBUG 2016-10-04 11:43:26,923: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u71681 -timeleft
+ output : 604704
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:27,529: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u71681 -actimeleft
+ output : 604703
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:27,529: 	 Proxy valid for 167:58:24 hours
+DEBUG 2016-10-04 11:43:28,139: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u71681 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:28,520: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+DEBUG 2016-10-04 11:43:28,632: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pwang/CN=760504/CN=Pen-Hsuan Wang
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:28,633: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2016-10-04 11:43:28,633: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pwang/CN=760504/CN=Pen-Hsuan Wang_cmsweb.cern.ch for credential name
+DEBUG 2016-10-04 11:43:28,837: 	 Executing : 
+ command : myproxy-info -l 300fa5228a372a08a18a5c96737591ca784274db -s myproxy.cern.ch
+ output : username: 300fa5228a372a08a18a5c96737591ca784274db
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pwang/CN=760504/CN=Pen-Hsuan Wang
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108).cern.ch
+  timeleft: 411:47:06  (17.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2016-10-04 11:43:28,838: 	 Myproxy is valid: 1482426
+DEBUG 2016-10-04 11:43:28,838: 	 Command use: submit
+DEBUG 2016-10-04 11:43:28,838: 	 Options use: ['--config', <WMCore.Configuration.Configuration object at 0x7f4787cb0310>]
+DEBUG 2016-10-04 11:43:29,198: 	 CRABClient version: 3.3.1608
+DEBUG 2016-10-04 11:43:29,198: 	 Instance is prod
+DEBUG 2016-10-04 11:43:29,198: 	 Server base url is cmsweb.cern.ch
+DEBUG 2016-10-04 11:43:29,198: 	 Command url /crabserver/prod/workflow
+DEBUG 2016-10-04 11:43:29,198: 	 Started submission
+DEBUG 2016-10-04 11:43:29,198: 	 Working on /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/test/crab_projects_2016pho/crab_job_tnp_spring16_Madgraph
+DEBUG 2016-10-04 11:43:29,716: 	 Loading required information from the environment
+DEBUG 2016-10-04 11:43:29,716: 	 Found CMSSW_8_0_10 for slc6_amd64_gcc530 with base /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10
+DEBUG 2016-10-04 11:43:29,745: 	 UNIQUE NAME: tarUUID 98cf52df-c60c-4ab9-bead-58fb5af84a8d 
+DEBUG 2016-10-04 11:43:29,746: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = False
+config.General.workArea = 'crab_projects_2016pho'
+config.General.requestName = 'job_tnp_spring16_Madgraph'
+config.section_('JobType')
+config.JobType.psetName = 'makeTree.py'
+config.JobType.pluginName = 'Analysis'
+config.section_('Data')
+config.Data.inputDataset = '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM'
+config.Data.publication = False
+config.Data.unitsPerJob = 150
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'LumiBased'
+config.Data.outLFNDirBase = '/store/user/pwang/08_16Test/MG'
+config.Data.totalUnits = -1
+config.section_('Site')
+config.Site.blacklist = ['T3_TW_NCU']
+config.Site.storageSite = 'T3_TW_NCU'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2016-10-04 11:43:29,746: 	 self.config.JobType.psetName: makeTree.py
+INFO 2016-10-04 11:43:29,746: 	 Importing CMSSW configuration makeTree.py
+INFO 2016-10-04 11:43:31,283: 	 Finished importing CMSSW configuration makeTree.py
+DEBUG 2016-10-04 11:43:31,283: 	 Writing CMSSW configuration to /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/test/crab_projects_2016pho/crab_job_tnp_spring16_Madgraph/inputs/PSet.py
+DEBUG 2016-10-04 11:43:31,435: 	 The following EDM output files will be collected: []
+DEBUG 2016-10-04 11:43:31,435: 	 The following TFile output files will be collected: ['TnPTree_mc.root']
+DEBUG 2016-10-04 11:43:31,435: 	 The following user output files will be collected: []
+DEBUG 2016-10-04 11:43:31,435: 	 Loading required information from the environment
+DEBUG 2016-10-04 11:43:31,435: 	 Found CMSSW_8_0_10 for slc6_amd64_gcc530 with base /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10
+DEBUG 2016-10-04 11:43:31,435: 	 Making tarball in /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/test/crab_projects_2016pho/crab_job_tnp_spring16_Madgraph/inputs/98cf52df-c60c-4ab9-bead-58fb5af84a8ddefault.tgz
+DEBUG 2016-10-04 11:43:31,480: 	 Checking directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/lib
+DEBUG 2016-10-04 11:43:31,480: 	 Adding directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/lib to tarball
+DEBUG 2016-10-04 11:43:38,574: 	 Checking directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/biglib
+DEBUG 2016-10-04 11:43:38,574: 	 Adding directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/biglib to tarball
+DEBUG 2016-10-04 11:43:38,575: 	 Checking directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/module
+DEBUG 2016-10-04 11:43:38,703: 	 Adding data directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/DataFormats/RecoCandidate/interface to tarball
+DEBUG 2016-10-04 11:43:38,816: 	 Adding data directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/interface to tarball
+DEBUG 2016-10-04 11:43:38,859: 	 Adding data directory /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/data to tarball
+DEBUG 2016-10-04 11:43:39,014: 	 Uploading archive /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/test/crab_projects_2016pho/crab_job_tnp_spring16_Madgraph/inputs/98cf52df-c60c-4ab9-bead-58fb5af84a8ddefault.tgz to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2016-10-04 11:43:42,663: 	 Loading required information from the environment
+DEBUG 2016-10-04 11:43:42,663: 	 Found CMSSW_8_0_10 for slc6_amd64_gcc530 with base /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10
+DEBUG 2016-10-04 11:43:42,663: 	 Making tarball in /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/test/crab_projects_2016pho/crab_job_tnp_spring16_Madgraph/inputs/debugFiles.tgz
+DEBUG 2016-10-04 11:43:42,667: 	 Uploading archive /afs/cern.ch/work/p/pwang/ZGAnaPhoPreSFs/CMSSW_8_0_10/src/PhysicsTools/TagAndProbe/test/crab_projects_2016pho/crab_job_tnp_spring16_Madgraph/inputs/debugFiles.tgz to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2016-10-04 11:43:42,981: 	 Result uploading input files: 72e4f4602ed2172e942e54c3733b43b1f5d0d272862279cedaab8d4e65ed77a8.tar.gz 
+INFO 2016-10-04 11:43:42,981: 	 Sending the request to the server
+DEBUG 2016-10-04 11:43:42,981: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 0, 'useparent': 0, 'asyncdest': 'T3_TW_NCU', 'algoargs': 150, 'cachefilename': '72e4f4602ed2172e942e54c3733b43b1f5d0d272862279cedaab8d4e65ed77a8.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_8_0_10', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1/MINIAODSIM', 'lfn': '/store/user/pwang/08_16Test/MG', 'dryrun': 0, 'workflow': 'crab_job_tnp_spring16_Madgraph', 'adduserfiles': [], 'nonprodsw': 0, 'tfileoutfiles': ['TnPTree_mc.root'], 'oneEventMode': 0, 'debugfilename': 'cf89fbb0de3380621ed75054216c0c230d06f293cbc30db980cae0b145beaa15.tar.gz', 'cacheurl': 'https://cmsweb.cern.ch/crabcache', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc6_amd64_gcc530', 'totalunits': -1, 'splitalgo': 'LumiBased', 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'siteblacklist': ['T3_TW_NCU'], 'publishname2': ''} 
+DEBUG 2016-10-04 11:43:42,981: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=0&useparent=0&asyncdest=T3_TW_NCU&algoargs=150&cachefilename=72e4f4602ed2172e942e54c3733b43b1f5d0d272862279cedaab8d4e65ed77a8.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_8_0_10&primarydataset=&inputdata=%2FDYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8%2FRunIISpring16MiniAODv2-PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0_ext1-v1%2FMINIAODSIM&lfn=%2Fstore%2Fuser%2Fpwang%2F08_16Test%2FMG&dryrun=0&workflow=crab_job_tnp_spring16_Madgraph&nonprodsw=0&oneEventMode=0&debugfilename=cf89fbb0de3380621ed75054216c0c230d06f293cbc30db980cae0b145beaa15.tar.gz&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&saveoutput=1&publication=0&jobarch=slc6_amd64_gcc530&totalunits=-1&splitalgo=LumiBased&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&siteblacklist=T3_TW_NCU&tfileoutfiles=TnPTree_mc.root
+DEBUG 2016-10-04 11:43:43,728: 	 Result: {'result': [{'RequestName': '161004_094343:pwang_crab_job_tnp_spring16_Madgraph'}]}
+INFO 2016-10-04 11:43:43,750: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2016-10-04 11:43:43,751: 	 Task name: 161004_094343:pwang_crab_job_tnp_spring16_Madgraph
+INFO 2016-10-04 11:43:43,751: 	 Please use 'crab status' to check how the submission process proceeds.
+DEBUG 2016-10-04 11:43:43,751: 	 About to return
