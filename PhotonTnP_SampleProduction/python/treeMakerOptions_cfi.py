@@ -169,18 +169,19 @@ def setSequences(process, options):
         )
 
     process.pho_sequence = cms.Sequence(
-        process.goodPhotons                    +
-        process.egmPhotonIDSequence            +
-        process.photonIDValueMapProducer       +
-        process.goodPhotonsPROBECutBasedLoose  +
-        process.goodPhotonsPROBECutBasedMedium +
-        process.goodPhotonsPROBECutBasedTight  +
-        process.goodPhotonsPROBEMVA            +
-        process.goodPhotonsProbeHLT            +
+        process.goodPhotons                      +
+        process.egmPhotonIDSequence              +
+        process.photonIDValueMapProducer         +
+        process.goodPhotonsPROBECutBasedLoose    +
+        process.goodPhotonsPROBECutBasedMedium   +
+        process.goodPhotonsPROBECutBasedTight    +
+        process.goodPhotonsPROBEMVA              +
+        process.goodPhotonsProbeHLT              +
 
-        process.goodPhotonsPhoIso              +
-        process.goodPhotonsPROBEFullPreselection       
-
+        process.goodPhotonsPhoIso                +
+        process.goodPhotonsPROBEFullPreselection +
+        process.goodPhotonsPROBEPrePhoGJAnaInEB  +
+        process.goodPhotonsPROBEPrePhoGJAnaInEE
         )
 
     process.sc_sequence = cms.Sequence( 

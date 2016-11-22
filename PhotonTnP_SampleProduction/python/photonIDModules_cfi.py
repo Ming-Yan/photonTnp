@@ -58,6 +58,75 @@ def setIDs(process, options):
     # END OF additional preselected cut for ZG analysis, add by PH in 08_15
 
 
+    # addition Cuts for SMP gamma jet analysis, add by Pen Hsuan in Nov22_2016
+    #EB
+    process.goodPhotonsPROBEInEB = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                  input     = cms.InputTag("phoWorstChargedIsolation"),
+                                                  cut       = cms.string(options['PHOTON_CUTS']),
+                                                  selection = cms.InputTag("abs(eta)"),
+                                                  id_cut    = cms.double(1.4442),
+                                                  isGreaterThan = cms.bool(False)
+                                                  )
+    #EE
+    process.goodPhotonsPROBEInEE = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                  input     = cms.InputTag("phoWorstChargedIsolation"),
+                                                  cut       = cms.string(options['PHOTON_CUTS']),
+                                                  selection = cms.InputTag("abs(eta)"),
+                                                  id_cut    = cms.double(1.566),
+                                                  isLessThan = cms.bool(False)
+                                                  )
+    # H/E in EB
+    process.goodPhotonsPROBEHoverEInEB = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                        input     = cms.InputTag("goodPhotonsPROBEInEB"),
+                                                        cut       = cms.string(options['PHOTON_CUTS']),
+                                                        selection = cms.InputTag("hadronicOverEm"),
+                                                        id_cut    = cms.double(0.08),
+                                                        isGreaterThan = cms.bool(False)
+                                                        )
+    # H/E in EE
+    process.goodPhotonsPROBEHoverEInEE = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                        input     = cms.InputTag("goodPhotonsPROBEInEE"),
+                                                        cut       = cms.string(options['PHOTON_CUTS']),
+                                                        selection = cms.InputTag("hadronicOverEm"),
+                                                        id_cut    = cms.double(0.05),
+                                                        isGreaterThan = cms.bool(False)
+                                                        )
+    # SigmaIEIE in EB
+    process.goodPhotonsPROBESigmaIEIEInEB = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                           input     = cms.InputTag("goodPhotonsPROBEHoverEInEB"),
+                                                           cut       = cms.string(options['PHOTON_CUTS']),
+                                                           selection = cms.InputTag("full5x5_sigmaIetaIeta"),
+                                                           id_cut    = cms.double(0.015),
+                                                           isGreaterThan = cms.bool(False)
+                                                           )
+    # SigmaIEIE in EE
+    process.goodPhotonsPROBESigmaIEIEInEE = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                           input     = cms.InputTag("goodPhotonsPROBEHoverEInEE"),
+                                                           cut       = cms.string(options['PHOTON_CUTS']),
+                                                           selection = cms.InputTag("full5x5_sigmaIetaIeta"),
+                                                           id_cut    = cms.double(0.045),
+                                                           isGreaterThan = cms.bool(False)
+                                                           )
+
+    # ChIso in EB
+    process.goodPhotonsPROBEPrePhoGJAnaInEB = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                             input     = cms.InputTag("goodPhotonsPROBESigmaIEIEInEB"),
+                                                             cut       = cms.string(options['PHOTON_CUTS']),
+                                                             selection = cms.InputTag("photonIDValueMapProducer:phoChargedIsolation"),
+                                                             id_cut    = cms.double(2),
+                                                             isGreaterThan = cms.bool(False)
+                                                             )
+    # ChIso in EE
+    process.goodPhotonsPROBEPrePhoGJAnaInEE = cms.EDProducer("PatPhotonSelectorByDoubleValueMap",
+                                                             input     = cms.InputTag("goodPhotonsPROBESigmaIEIEInEE"),
+                                                             cut       = cms.string(options['PHOTON_CUTS']),
+                                                             selection = cms.InputTag("photonIDValueMapProducer:phoChargedIsolation"),
+                                                             id_cut    = cms.double(1.5),
+                                                             isGreaterThan = cms.bool(False)
+                                                             )
+    # End of Add Cut, by PH in Nov22 2016    
+    
+
 
 #    process.goodPhotonsTAGCutBasedLoose = cms.EDProducer("PatPhotonSelectorByValueMap",
 #                                                         input     = cms.InputTag("goodPhotons"),
