@@ -289,6 +289,8 @@ process.GsfElectronToPhoID = cms.EDAnalyzer("TagProbeFitTreeProducer",
                                                                      passingTight  = cms.InputTag("goodPhotonsPROBECutBasedTight"),
                                                                      passingMVA    = cms.InputTag("goodPhotonsPROBEMVA"),
                                                                      passingPrePho = cms.InputTag("goodPhotonsPROBEFullPreselection"),
+                                                                     passingGJPrePho = cms.InputTag("goodPhotonsPROBEPrePhoGJAnaInEB",
+                                                                                                    "goodPhotonsPROBEPrePhoGJAnaInEE"),
                                                                      ),
                                             allProbes     = cms.InputTag("goodPhotonsProbeHLT"),
                                             )
