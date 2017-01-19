@@ -1,0 +1,67 @@
+nohup: ignoring input
+===> settings etc/config/settings_pho.py <===
+import etc.config.settings_pho as tnpConf
+[?1034h
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+===>  Output directory: 
+results/Moriond17/tnpPhoID_Winter17MC/runFull2016/passingTight80X/
+creating histogram for sample 
+**** name: DY_amcatnlo_Winter17                                                                                 
+  path    :  ['eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/mc/TnPTree_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_DYToLL_mcAtNLO_Moriond17.root']
+  tnpTree :  GsfElectronToPhoID
+   --- MC sample --- 
+  nEvts    :  28968252
+  mcTruth  :  True
+  puTree   :  eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_amcatnlo_Winter17_pho.pu.puTree.root
+  weight   :  weights_2016_runGH.totWeight
+ adding rootfile:  eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/mc/TnPTree_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_DYToLL_mcAtNLO_Moriond17.root
+ - Adding weight tree: weights_2016_runGH from file eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_amcatnlo_Winter17_pho.pu.puTree.root 
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -2.500000 && probe_sc_eta < -2.000000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 1335.8 ; fail : 1509.7 : eff: 0.469
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -2.000000 && probe_sc_eta < -1.566000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 1610.4 ; fail : 1526.4 : eff: 0.513
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -1.566000 && probe_sc_eta < -1.444200 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 356.4 ; fail : 650.8 : eff: 0.354
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -1.444200 && probe_sc_eta < -0.800000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 2254.8 ; fail : 2172.5 : eff: 0.509
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -0.800000 && probe_sc_eta < 0.000000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 1855.5 ; fail : 2172.9 : eff: 0.461
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 0.000000 && probe_sc_eta < 0.800000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 1791.2 ; fail : 2074.6 : eff: 0.463
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 0.800000 && probe_sc_eta < 1.444200 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 2252.9 ; fail : 2212.7 : eff: 0.505
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 1.444200 && probe_sc_eta < 1.566000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 313.0 ; fail : 704.3 : eff: 0.308
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 1.566000 && probe_sc_eta < 2.000000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 1577.3 ; fail : 1624.3 : eff: 0.493
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 2.000000 && probe_sc_eta < 2.500000 && probe_Pho_et >= 15.000000 && probe_Pho_et < 20.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 1348.8 ; fail : 1559.4 : eff: 0.464
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -2.500000 && probe_sc_eta < -2.000000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 15755.8 ; fail : 10250.5 : eff: 0.606
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -2.000000 && probe_sc_eta < -1.566000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 17168.5 ; fail : 11097.1 : eff: 0.607
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -1.566000 && probe_sc_eta < -1.444200 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 3269.6 ; fail : 4042.2 : eff: 0.447
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -1.444200 && probe_sc_eta < -0.800000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 30566.6 ; fail : 19098.6 : eff: 0.615
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -0.800000 && probe_sc_eta < 0.000000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 37230.2 ; fail : 27214.3 : eff: 0.578
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 0.000000 && probe_sc_eta < 0.800000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 37184.8 ; fail : 26869.6 : eff: 0.581
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 0.800000 && probe_sc_eta < 1.444200 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 29846.4 ; fail : 18999.6 : eff: 0.611
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 1.444200 && probe_sc_eta < 1.566000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 3213.3 ; fail : 4012.3 : eff: 0.445
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 1.566000 && probe_sc_eta < 2.000000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 16775.6 ; fail : 11082.0 : eff: 0.602
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= 2.000000 && probe_sc_eta < 2.500000 && probe_Pho_et >= 20.000000 && probe_Pho_et < 35.000000 && tag_Ele_nonTrigMVA > 0.97 && sqrt( 2*event_met_pfmet*tag_Ele_pt*(1-cos(event_met_pfphi-tag_Ele_phi))) < 45  && mcTrue==1
+    ==> pass: 16000.5 ; fail : 10314.4 : eff: 0.608
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -2.500000 && probe_sc_eta < -2.000000 && probe_Pho_et >= 35.000000 && probe_Pho_et < 50.000000 && mcTrue==1
+    ==> pass: 43917.6 ; fail : 19960.2 : eff: 0.688
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -2.000000 && probe_sc_eta < -1.566000 && probe_Pho_et >= 35.000000 && probe_Pho_et < 50.000000 && mcTrue==1
+    ==> pass: 57722.1 ; fail : 26809.5 : eff: 0.683
+tag_Ele_pt > 30 && abs(tag_sc_eta) < 2.17 && probe_sc_eta >= -1.566000 && probe_sc_eta < -1.444200 && probe_Pho_et >= 35.000000 && probe_Pho_et < 50.000000 && mcTrue==1
+    ==> p
