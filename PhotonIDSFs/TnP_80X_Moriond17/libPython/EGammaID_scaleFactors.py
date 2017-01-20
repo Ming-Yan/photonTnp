@@ -12,17 +12,17 @@ import efficiencyUtils as effUtil
 tdrstyle.setTDRStyle()
 
 
-#effiMin = 0.68 # original one
+#effiMin = 0.68
 #effiMax = 1.07
 
-effiMin = 0.40 #change the range by myself
-effiMax = 1.10
+effiMin = 0.55
+effiMax = 0.95
 
-#sfMin = 0.78 # original one
+#sfMin = 0.78
 #sfMax = 1.12
-sfMin = 0.7
-sfMax = 1.2
 
+sfMin = 0.70
+sfMax = 1.20
 
 def isFloat( myFloat ):
     try:
@@ -135,16 +135,13 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
         xMin = 0.0
 
     effminmax =  findMinMax( effDataList )
-    #effiMin = effminmax[0] # commond out by myself in 12_13
-    #effiMax = effminmax[1] # commond out by myself in 12_13
+    effiMin = effminmax[0]
+    effiMax = effminmax[1]
 
     sfminmax =  findMinMax( sfList )
     sfMin = sfminmax[0]
-    #sfMin = 0.72
-    #sfMax = 1.06
-
-    sfMin = 0.72
-    sfMax = 1.06
+    sfMin = 0.94
+    sfMax = 1.02
 
     for key in sorted(effDataList.keys()):
         grBinsEffData = effUtil.makeTGraphFromList(effDataList[key], 'min', 'max')
@@ -372,8 +369,8 @@ def doEGM_SFs(filein, lumi, axis = ['pT','eta'] ):
     dmin = 1.0 - h2SF.GetMinimum()
     dmax = h2SF.GetMaximum() - 1.0
     dall = max(dmin,dmax)
-    h2SF.SetMinimum(sfMin)
-    h2SF.SetMaximum(sfMax)
+    h2SF.SetMinimum(1-dall)
+    h2SF.SetMaximum(1+dall)
     h2SF.DrawCopy("colz TEXT45")
     
     c2D.cd(2)

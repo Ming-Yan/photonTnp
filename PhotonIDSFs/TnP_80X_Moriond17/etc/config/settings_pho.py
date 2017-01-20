@@ -13,8 +13,7 @@ flags = {
     'passingMVA80Xwp90' : '(passingMVA80Xwp90 == 1)',
     }
 
-baseOutDir = 'results/Moriond17/tnpPhoID_Winter17MC/runFull2016'
-#baseOutDir = 'results/Moriond17/tnpPhoID/runFull2016'
+baseOutDir = 'results/Moriond17/tnpPhoID_Winter17_v3/runFull2016'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -62,7 +61,7 @@ if not samplesDef['tagSel'] is None:
 #if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 
 ## set MC weight, can use several pileup rw for different data taking periods
-weightName = 'weights_2016_runGH.totWeight'
+weightName = 'weights_2016_runAll.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
@@ -123,10 +122,10 @@ tnpParNomFit = [
     ]
 
 tnpParAltSigFit = [
-    "meanP[-0.0,-5.0,5.0]","sigmaP[1,0.7,6.0]","alphaP[2.0,1.2,3.5]" ,'nP[3,0.05,5]',"sigmaP_2[1.5,0.5,6.0]","sosP[1,0.5,5.0]",
-    "meanF[-0.0,-5.0,5.0]","sigmaF[2,0.7,15.0]","alphaF[2.0,1.2,3.5]",'nF[3,0.05,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
-    "acmsP[60.,50.,75.]","betaP[0.04,0.01,0.06]","gammaP[0.1, -2, 2]","peakP[90.0]",
-    "acmsF[60.,50.,75.]","betaF[0.04,0.01,0.06]","gammaF[0.1, -2, 2]","peakF[90.0]",
+    "meanP[-0.0,-5.0,5.0]","sigmaP[1,0.7,6.0]","alphaP[2.0,1.2,3.5]" ,'nP[3,-5,5]',"sigmaP_2[1.5,0.5,6.0]","sosP[1,0.5,5.0]",
+    "meanF[-0.0,-5.0,5.0]","sigmaF[2,0.7,15.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
+    "acmsP[60.,50.,90.]","betaP[0.04,0.01,0.06]","gammaP[0.1, 0.001, 1]","peakP[90.0]",
+    "acmsF[60.,50.,90.]","betaF[0.04,0.01,0.06]","gammaF[0.1, 0.001, 1]","peakF[90.0]",
     ]
      
 tnpParAltBkgFit = [
