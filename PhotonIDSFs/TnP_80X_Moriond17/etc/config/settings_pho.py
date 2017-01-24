@@ -69,7 +69,6 @@ if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('eos/cms/st
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_amcatnlo_Winter17_pho.pu.puTree.root')
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_madgraph_Winter17_pho.pu.puTree.root')
 
-
 #############################################################
 ########## bining definition  [can be nD bining]
 #############################################################
@@ -124,14 +123,14 @@ tnpParNomFit = [
 tnpParAltSigFit = [
     "meanP[-0.0,-5.0,5.0]","sigmaP[1,0.7,6.0]","alphaP[2.0,1.2,3.5]" ,'nP[3,-5,5]',"sigmaP_2[1.5,0.5,6.0]","sosP[1,0.5,5.0]",
     "meanF[-0.0,-5.0,5.0]","sigmaF[2,0.7,15.0]","alphaF[2.0,1.2,3.5]",'nF[3,-5,5]',"sigmaF_2[2.0,0.5,6.0]","sosF[1,0.5,5.0]",
-    "acmsP[60.,50.,90.]","betaP[0.04,0.01,0.06]","gammaP[0.1, 0.001, 1]","peakP[90.0]",
-    "acmsF[60.,50.,90.]","betaF[0.04,0.01,0.06]","gammaF[0.1, 0.001, 1]","peakF[90.0]",
+    "acmsP[60.,50.,75.]","betaP[0.05,0.01,0.08]","gammaP[0.1, -2, 2]","peakP[90.0]",
+    "acmsF[60.,50.,75.]","betaF[0.05,0.01,0.08]","gammaF[0.1, -2, 2]","peakF[90.0]",
     ]
      
 tnpParAltBkgFit = [
-    "meanP[-0.0,-5.0,5.0]","sigmaP[0.7,0.5,5.0]",
-    "meanF[-0.0,-5.0,5.0]","sigmaF[0.7,0.5,5.0]",
-    "alphaP[0.,-5.,5.]",
-    "alphaF[0.,-5.,5.]",
+    "meanP[-0.0,-5.0,5.0]","sigmaP[0.3,0.1,5.0]",
+    "meanF[-0.0,-5.0,5.0]","sigmaF[0.3,0.1,5.0]",
+    "alphaP[0.,-10.,10.]",
+    "alphaF[0.,-10.,10.]",
     ]
         

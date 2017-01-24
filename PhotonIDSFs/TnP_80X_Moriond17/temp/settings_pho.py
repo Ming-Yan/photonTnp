@@ -64,7 +64,7 @@ if not samplesDef['tagSel'] is None:
 ## set MC weight, can use several pileup rw for different data taking periods
 weightName = 'weights_2016_runGH.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(1)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_madgraph_Winter17_pho.pu.puTree.root')
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_amcatnlo_Winter17_pho.pu.puTree.root')

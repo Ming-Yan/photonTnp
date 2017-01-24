@@ -1,4 +1,3 @@
-#!/bin/bash
 
 #python tnpEGM_fitter.py etc/config/settings_pho.py --flag passingLoose --createBins
 

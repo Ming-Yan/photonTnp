@@ -48,13 +48,13 @@ def makePassFailHistograms( sample, flag, bindef, var ):
             if sample.maxWeight < 999:
                 cutPass = '( %s && %s ) * (%s < %f ? %s : 1.0 )' % (cuts,    flag, sample.weight,sample.maxWeight,sample.weight)
                 cutFail = '( %s && %s ) * (%s < %f ? %s : 1.0 )' % (cuts, notflag, sample.weight,sample.maxWeight,sample.weight)
+
         else:
             cutPass = '( %s && %s )' % (cuts,    flag)
             cutFail = '( %s && %s )' % (cuts, notflag)
         
         tree.Draw('%s >> %s' % (var['name'],hPass[ib].GetName()),cutPass,'goff')
         tree.Draw('%s >> %s' % (var['name'],hFail[ib].GetName()),cutFail,'goff')
-
         
         removeNegativeBins(hPass[ib])
         removeNegativeBins(hFail[ib])
