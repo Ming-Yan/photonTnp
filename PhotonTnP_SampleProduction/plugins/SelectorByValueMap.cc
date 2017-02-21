@@ -14,4 +14,4 @@ typedef SelectorByValueMap<pat::Photon, bool> PatPhotonSelectorByValueMap;
 DEFINE_FWK_MODULE(PatPhotonSelectorByValueMap);
 
 typedef SelectorByValueMap<pat::Photon, float> PatPhotonSelectorByDoubleValueMap;
-DEFINE_FWK_MODULE(PatPhotonSelectorByDoubleValueMap); // PH ADD 08_15
+DEFINE_FWK_MODULE(PatPhotonSelectorByDoubleValueMap); // added by PH in 05.01.17
