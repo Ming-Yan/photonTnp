@@ -14,6 +14,5 @@ All the plots can be found in https://hjheng.web.cern.ch/hjheng/EleVeto_2017/
         - IDtype: **1**-->Loose; **2**-->Medium; **3**-->Tight; **4**-->General purpose MVA 
         - EleVetoSet: **1**-->Pixel seed veto; **2**-->Conversion safe veto
 
-    
-#### TO-DO #### 
+#### TO-DO ####
 - [ ] Make a script to run all macros
